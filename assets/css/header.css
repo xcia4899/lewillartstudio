@@ -9,11 +9,14 @@
   justify-content: space-between;
   align-items: center;
 }
-.header .menu {
+.header .menuBox {
+  flex: 1 1 auto;
   display: flex;
   gap: 20px;
 }
-.header .menu.is-open {
+.header .menuBox.is-open {
   opacity: 1;
   background: #9b9b9b;
-}/*# sourceMappingURL=header.css.map */
+}
+
+/*# sourceMappingURL=header.css.map */
