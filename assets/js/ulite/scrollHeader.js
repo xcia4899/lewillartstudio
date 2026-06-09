@@ -1,5 +1,5 @@
 ﻿export function scrollHeader() {
-  const header = document.querySelector(".header-inner");
+  const header = document.querySelector(".header");
   if (!header) return;
 
   const onScroll = () => {
