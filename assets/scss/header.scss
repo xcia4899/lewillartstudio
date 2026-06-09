@@ -15,12 +15,6 @@
     padding-top: 16px;
     gap: 0 32px;
     transition: all 0.5s ease-in-out;
-
-    @media (max-width:1366px) {
-      gap: 0 20px;
-    }
-
-
   }
 
   .logo {
@@ -121,6 +115,8 @@
   }
 
   .rightBox {
+    display: flex;
+
     .languageBox {
       font-size: 14px;
 
@@ -138,16 +134,99 @@
         transition: all 0.5s;
         cursor: pointer;
         pointer-events: none;
-        &:hover {
-          color: #fff;
-          background-color: #333333;
+
+        @media (min-width: 1180px) {
+          &:hover {
+            color: #fff;
+            background-color: #333333;
+          }
         }
+
       }
     }
 
     .slideMenuTrigger {
       display: none;
+      position: relative;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 75px;
+      height: 77px;
+      flex-shrink: 0;
+      background-color: #eacf5b;
+      cursor: pointer;
+    
+    }
 
+    .open {
+      animation: slideDownAnimation 0.4s ease-in-out 0.5s both;
+    }
+
+   
+  }
+
+  @media (max-width: 1366px) {
+    .header-inner {
+      padding-left: 30px;
+      padding-block: 0px;
+      gap: 0 20px;
+    }
+
+    .logo {
+      width: 230px;
+    }
+
+
+  }
+
+  @media (max-width: 1180px) {
+    .header-inner {
+      padding-left: 30px;
+      padding-block: 0px;
+    }
+
+    .logo {
+      width: 230px;
+    }
+
+    .menuBox {
+      display: none;
+    }
+
+    .rightBox {
+      .languageBox {
+        animation: slideDownAnimation 0.4s ease-in-out 0.4s both;
+        .languageCurrent {
+          pointer-events: auto;
+          opacity: 1;
+          background-color: transparent;
+        }
+      }
+
+      .slideMenuTrigger {
+        display: flex;
+
+        .icon {
+          width: 32px;
+          height: 32px;
+          color: #333333;
+        }
+      }
+    }
+  }
+  
+  @keyframes slideDownAnimation {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
     }
   }
 }
@@ -197,11 +276,6 @@ header.is-scrolled {
         pointer-events: auto;
         opacity: 1;
       }
-    }
-
-    .slideMenuTrigger {
-      display: none;
-
     }
   }
 }

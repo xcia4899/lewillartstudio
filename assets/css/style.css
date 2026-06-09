@@ -56,11 +56,6 @@ ul {
   gap: 0 32px;
   transition: all 0.5s ease-in-out;
 }
-@media (max-width: 1366px) {
-  .header .header-inner {
-    gap: 0 20px;
-  }
-}
 .header .logo {
   width: 300px;
   transition: all 0.5s ease-in-out;
@@ -142,6 +137,9 @@ ul {
   opacity: 1;
   background: #9b9b9b;
 }
+.header .rightBox {
+  display: flex;
+}
 .header .rightBox .languageBox {
   font-size: 14px;
 }
@@ -160,12 +158,76 @@ ul {
   cursor: pointer;
   pointer-events: none;
 }
-.header .rightBox .languageBox .languageCurrent:hover {
-  color: #fff;
-  background-color: #333333;
+@media (min-width: 1180px) {
+  .header .rightBox .languageBox .languageCurrent:hover {
+    color: #fff;
+    background-color: #333333;
+  }
 }
 .header .rightBox .slideMenuTrigger {
   display: none;
+  position: relative;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 77px;
+  flex-shrink: 0;
+  background-color: #eacf5b;
+  cursor: pointer;
+}
+.header .rightBox .open {
+  animation: slideDownAnimation 0.4s ease-in-out 0.5s both;
+}
+@media (max-width: 1366px) {
+  .header .header-inner {
+    padding-left: 30px;
+    padding-block: 0px;
+    gap: 0 20px;
+  }
+  .header .logo {
+    width: 230px;
+  }
+}
+@media (max-width: 1180px) {
+  .header .header-inner {
+    padding-left: 30px;
+    padding-block: 0px;
+  }
+  .header .logo {
+    width: 230px;
+  }
+  .header .menuBox {
+    display: none;
+  }
+  .header .rightBox .languageBox {
+    animation: slideDownAnimation 0.4s ease-in-out 0.4s both;
+  }
+  .header .rightBox .languageBox .languageCurrent {
+    pointer-events: auto;
+    opacity: 1;
+    background-color: transparent;
+  }
+  .header .rightBox .slideMenuTrigger {
+    display: flex;
+  }
+  .header .rightBox .slideMenuTrigger .icon {
+    width: 32px;
+    height: 32px;
+    color: #333333;
+  }
+}
+@keyframes slideDownAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
 
 header.is-scrolled {
@@ -208,9 +270,6 @@ header.is-scrolled .menuBox.is-open {
 header.is-scrolled .rightBox .languageBox .languageCurrent {
   pointer-events: auto;
   opacity: 1;
-}
-header.is-scrolled .rightBox .slideMenuTrigger {
-  display: none;
 }
 
 .outerWrap {
