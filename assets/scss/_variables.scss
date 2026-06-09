@@ -1,9 +1,14 @@
 $primary-color: #ef5b00;
-$text-color: #222;
+$text-color: #333333;
 $bg-color: #111;
-
+$bg-yellow: #eacf5b;
 $container-width: 1400px;
 
 $pc-media: 1400px;
 $tablet-media: 1024px;
 $mobile-media: 767px;
+
+:root {
+  --mainColor: $text-color; 
+  --secondColor: $bg-yellow;
+}

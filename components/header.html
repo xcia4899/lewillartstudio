@@ -1,13 +1,50 @@
-<header class="header">
-    <div class="header-inner">
-        <div class="logo">
-            <img src="https://www.lewillartstudio.com/images/logo.svg"></img>
+<div class="header-inner">
+  <div class="logo">
+    <img src="https://www.lewillartstudio.com/images/logo.svg" />
+  </div>
+
+  <nav class="menuBox"><!--menuBox-->
+    <ul class="menu-inner"><!--menu-->
+      <li class="menuItem">
+        <span><a class="mainLink" href="#">關於我們</a></span>
+      </li>
+      <li class="menuItem dropDown">
+        <span><a class="mainLink" href="#">策劃日誌</a></span>
+        <div class="submenu twoLayers">
+          <div class="submenuItem ">
+            <a class="submenuItemTitle " href="#"> 所有消息</a>
+          </div>
         </div>
+      </li>
+      <li class="menuItem dropDown">
+        <span><a class="mainLink" href="#">關於團隊</a></span>
+      </li>
+      <li class="menuItem dropDown">
+        <span><a class="mainLink" href="#">最新消息</a></span>
+        <div class="submenu twoLayers">
+          <div class="submenuItem ">
+            <a class="submenuItemTitle " href="#"> 最新消息</a>
+          </div>
+        </div>
+      </li>
+      <li class="menuItem">
+        <span><a class="mainLink" href="#">聯絡我們</a></span>
+      </li>
+    </ul><!--menu end-->
+  </nav>
 
-        <nav class="menuBox"><!--menuBox-->
+  <div class="rightBox">
 
-        </nav>
-
-        <button class="menu-btn">menu</button>
+    <!--languageBox-->
+    <div class="languageBox">
+      <a class="languageCurrent" >
+        EN </a>
     </div>
-</header>
+    <!-- 手機板漢堡選單按鈕 -->
+    <div class="slideMenuTrigger open">
+      <svg class="icon">
+        <use xlink:href="#iconMenu"></use>
+      </svg>
+    </div>
+  </div>
+</div>
