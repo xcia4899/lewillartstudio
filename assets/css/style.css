@@ -297,8 +297,8 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
 }
 
 .footer {
-  background: #e9ca49;
   width: 100%;
+  overflow-x: hidden;
 }
 .footer .footer-inner {
   position: relative;
@@ -312,6 +312,20 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   overflow: clip;
   width: 100%;
   margin: 0 auto;
+  background: #e9ca49;
+}
+@media (max-width: 1180px) {
+  .footer .footer-inner {
+    padding: 30px 30px 40px;
+  }
+}
+@media (max-width: 768px) {
+  .footer .footer-inner {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2.25rem;
+  }
 }
 .footer .leftBox {
   display: flex;
@@ -330,13 +344,19 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
 .footer .leftBox .socialLinkBox a {
   cursor: pointer;
 }
+.footer .leftBox .socialLinkBox a i {
+  font-size: 28px;
+}
 .footer .leftBox .socialLinkBox .socialBox a {
+  transition: all 0.5s ease-in-out;
   display: block;
   position: relative;
   color: #333333;
 }
-.footer .leftBox .socialLinkBox .socialBox i {
-  font-size: 28px;
+@media (hover: hover) {
+  .footer .leftBox .socialLinkBox .socialBox a:hover {
+    color: #fff;
+  }
 }
 .footer .leftBox .socialLinkBox .contactLink {
   position: relative;
@@ -351,10 +371,147 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   border-radius: 30px;
   transition: all 0.5s ease-in-out;
 }
+@media (hover: hover) {
+  .footer .leftBox .socialLinkBox .contactLink:hover {
+    color: #333;
+    background-color: #fff;
+  }
+}
 .footer .leftBox .footerMenuBox .footerMenu {
   display: flex;
   flex-wrap: wrap;
   column-gap: 1.875rem;
+}
+@media (max-width: 1180px) {
+  .footer .leftBox {
+    width: 380px;
+  }
+}
+@media (max-width: 768px) {
+  .footer .leftBox {
+    align-items: center;
+  }
+  .footer .leftBox .footerMenuBox {
+    display: none;
+  }
+}
+.footer .rightBox {
+  position: relative;
+  width: 280px;
+}
+.footer .rightBox .footerLogo a {
+  display: block;
+  width: 155px;
+  margin-left: auto;
+}
+@media (max-width: 1180px) {
+  .footer .rightBox .footerLogo a {
+    width: 130px;
+  }
+}
+.footer .rightBox .footerLogo a img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.footer .rightBox .side_contactInfo {
+  margin-top: 2.25rem;
+}
+.footer .rightBox .side_contactInfo .infoList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px 10px;
+  font-size: 16px;
+}
+.footer .rightBox .side_contactInfo .infoList li {
+  position: relative;
+  flex: 0 0 calc(50% - 5px);
+}
+.footer .rightBox .side_contactInfo .infoList li span,
+.footer .rightBox .side_contactInfo .infoList li a {
+  position: relative;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.68px;
+  line-height: 1.5;
+  color: #333333;
+  white-space: normal;
+}
+.footer .rightBox .side_contactInfo .infoList .mail {
+  text-align: right;
+  flex: 0 0 100%;
+}
+@media (max-width: 768px) {
+  .footer .rightBox .footerLogo a {
+    margin: 0 auto;
+  }
+  .footer .rightBox .side_contactInfo .infoList {
+    justify-content: center;
+  }
+  .footer .rightBox .side_contactInfo .infoList .mail {
+    text-align: center;
+  }
+}
+.footer .goTopBox {
+  width: 200px;
+  height: 135px;
+  position: absolute;
+  top: auto;
+  right: 70px;
+  bottom: -126px;
+  left: auto;
+  z-index: 1;
+  transform-origin: bottom;
+}
+.footer .goTopBox:hover {
+  animation: goTopAni 0.3s ease-in-out forwards;
+}
+.footer .goTopBox .goTop {
+  position: relative;
+  display: block;
+  background: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.footer .goTopBox .goTop img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  backface-visibility: hidden;
+  overflow: clip;
+}
+@keyframes goTopAni {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.8);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@media (max-width: 1280px) {
+  .footer .goTopBox {
+    width: 150px;
+    height: 100px;
+    right: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .footer .goTopBox {
+    width: 105px;
+    height: 70px;
+    right: 50%;
+    translate: 50% 0;
+  }
 }
 
 .fa-youtube-play:before {
