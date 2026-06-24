@@ -1,6 +1,6 @@
 .footer {
+  position: relative;
   width: 100%;
-  overflow-x: hidden;
 }
 .footer .footer-inner {
   position: relative;
@@ -162,11 +162,11 @@
   width: 200px;
   height: 135px;
   position: absolute;
-  top: auto;
+  top: 4px;
   right: 70px;
-  bottom: -126px;
   left: auto;
   z-index: 1;
+  translate: 0 -100%;
   transform-origin: bottom;
 }
 .footer .goTopBox:hover {
@@ -212,7 +212,7 @@
     width: 105px;
     height: 70px;
     right: 50%;
-    translate: 50% 0;
+    translate: 50% -100%;
   }
 }
 
