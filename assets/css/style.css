@@ -33,6 +33,15 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   background: transparent;
 }
 
+figure {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+  unicode-bidi: isolate;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -524,6 +533,77 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
 
 .main {
   min-height: 100vh;
+}
+
+.homeHero {
+  position: relative;
+}
+.homeHero .homeHero-inner {
+  position: relative;
+  padding-inline: clamp(8px, 2vw, 50px);
+}
+.homeHero .squareAni {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  width: 100%;
+  height: 100dvw;
+  max-height: 1500px;
+  background-color: #dddddc;
+  mask-image: url(../images/decoMask.png);
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: left top;
+  overflow: hidden;
+  z-index: -1;
+}
+.homeHero .heroCarouselBox {
+  position: relative;
+}
+.homeHero .heroCarouselBox .heroSwiper {
+  position: relative;
+  overflow: visible;
+}
+.homeHero .heroCarouselBox .heroSwiper .swiper-slide:hover .img {
+  transform: translateY(-50px) scale(1.1);
+  z-index: 10;
+}
+.homeHero .heroCarouselBox .heroSwiper .swiper-slide .item {
+  position: relative;
+  cursor: pointer;
+}
+.homeHero .heroCarouselBox .heroSwiper .swiper-slide .item .img {
+  margin: 0;
+  padding: 0.3125rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 2px solid #eee;
+  box-shadow: 0px 15px 35px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.6s cubic-bezier(0.3, 2.5, 1, 1);
+  overflow: hidden;
+  pointer-events: none;
+  will-change: translate;
+  z-index: 1;
+}
+.homeHero .heroCarouselBox .heroSwiper .swiper-slide .item .img img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  backface-visibility: hidden;
+  border: 2px solid #eee;
+}
+.homeHero .heroCarouselBox .swiper-button {
+  background-color: #fff;
+}
+.homeHero .backBox {
+  position: relative;
+  pointer-events: none;
+  margin-top: -100px;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

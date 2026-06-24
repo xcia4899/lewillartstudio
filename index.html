@@ -7,14 +7,99 @@
   <title>樂誌藝術工作訪 | 切版練習</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
 </head>
 
 <body>
   <div class="outerWrap">
     <header id="header" class="header scrolling"></header>
+    <section class="homeHero">
+      <div class="homeHero-inner">
+        <div class="squareAni">
+          <svg class="right"
+            style="translate: none; rotate: none; scale: none; transform: rotate(20deg) scale(0.5, 0.5);">
+            <use xlink:href="#serviceDeco1"></use>
+          </svg><svg class="left" style="translate: none; rotate: none; scale: none; transform: translate(-15%, 0%);">
+            <use xlink:href="#serviceDeco2"></use>
+          </svg>
+        </div>
+        <div class="heroCarouselBox">
+          <!-- Swiper -->
+          <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="item">
+                  <figure class="img observer loaded">
+                    <a href="">
+                      <img alt="01" width="649" height="919" src="./assets/images/twL_banner_25D15_vE9qCiFuDB.png">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="item">
+                  <figure class="img observer loaded">
+                    <a href="">
+                      <img alt="02" width="649" height="919" src="./assets/images/twL_banner_25D15_7alunlpyRj.png">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="item">
+                  <figure class="img observer loaded">
+                    <a href="">
+                      <img alt="03" width="649" height="919" src="./assets/images/twL_banner_25G31_T4NaIhw2Gs.png">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="item">
+                  <figure class="img observer loaded">
+                    <a href="">
+                      <img alt="04" width="649" height="919" src="./assets/images/banner_650x920-4__25D15Jdz9G.jpg">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="item">
+                  <figure class="img observer loaded">
+                    <a href="">
+                      <img alt="05" width="649" height="919" src="./assets/images/banner_650x920-5__25D15UY7mI.jpg">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="item">
+                  <figure class="img observer loaded">
+                    <a href="">
+                      <img alt="03" width="649" height="919" src="./assets/images/twL_banner_25D15_yIeRhsjvFH.png">
+                    </a>
+                  </figure>
+                </div>
+              </div>
+
+            </div>
+            <div class="swiper-button swiper-button-next"></div>
+            <div class="swiper-button swiper-button-prev"></div>
+          </div>
+        </div>
+        <div class="backBOx">
+          <figure class="img">
+            <img src="./assets/images/banner-bg_1655x580__25D15b02fz.png" alt="背景圖" width="1655" height="579">
+          </figure>
+        </div>
+      </div>
+
+    </section>
     <main id="main" class="main">
-      <h1>內容</h1>
-      <a href="">連結</a>
+      <section class="homeCarousel"></section>
+      <section class="homeAbout"></section>
+      <section class="homeProjects"></section>
     </main>
     <footer id="footer" class="footer"></footer>
     <!-- SVG Sprite -->
@@ -32,10 +117,36 @@
           d="M10.3105 17.8948C10.1384 18.0973 9.69063 18.583 8.96799 19.3588C8.24916 20.1384 7.49526 20.9075 6.70629 21.6661C6.41152 21.9609 6.09833 22.274 5.75225 22.5973C5.40996 22.9244 5.07924 23.2324 4.75772 23.5311C4.43548 23.823 4.15695 24.0787 3.91455 24.2908C3.67214 24.5028 3.49963 24.6373 3.39322 24.6906C3.21635 24.7839 3.03456 24.7987 2.84551 24.7447C2.65266 24.687 2.46377 24.6025 2.27578 24.4943C2.08399 24.3824 1.90068 24.2543 1.73273 24.1109C1.56098 23.9638 1.40749 23.8287 1.267 23.6882C1.24043 23.6616 1.20101 23.6099 1.15561 23.5338C1.11021 23.4577 1.02886 23.3948 0.917693 23.3389C0.891115 23.3123 0.82043 23.2539 0.698766 23.163C0.583969 23.0727 0.466266 22.955 0.349456 22.8136C0.235715 22.6692 0.134982 22.5193 0.0571963 22.3617C-0.020589 22.2041 -0.0190344 22.0583 0.0618565 21.9242C0.115113 21.8178 0.390902 21.504 0.893744 20.9936C1.39586 20.4763 1.94856 19.9236 2.55798 19.3294C3.1674 18.7351 3.76453 18.1532 4.35391 17.5942C4.94329 17.0352 5.34318 16.6429 5.55505 16.431L16.5844 5.40165C16.959 5.02704 17.412 4.55887 17.9472 4.00092C18.4816 3.43611 19.0083 2.89424 19.5196 2.36772C20.034 1.83814 20.5237 1.36366 20.9742 0.935961C21.4315 0.508991 21.7827 0.233765 22.0421 0.118602C22.3254 -0.0279925 22.6095 -0.0386916 22.8943 0.0865043C23.1792 0.2117 23.4599 0.394179 23.7266 0.636286C23.9964 0.875322 24.2193 1.15355 24.3986 1.4679C24.5778 1.78224 24.7091 2.06097 24.7964 2.30786C24.7984 2.359 24.8262 2.42986 24.8823 2.51048C24.9353 2.59418 24.954 2.67424 24.9253 2.75609C24.8882 2.82348 24.6748 3.05215 24.2924 3.4497C23.9131 3.84418 23.5522 4.22024 23.2204 4.5824C21.1773 6.70906 19.0827 8.89479 16.939 11.1296C14.796 13.3714 12.6817 15.5312 10.5968 17.6161L10.3173 17.8956L10.3105 17.8948Z"
           fill="currentColor"></path>
       </symbol>
+      <symbol id="serviceDeco1" viewBox="0 0 585 875">
+        <path d="M351.5 268C403.9 241.6 395.333 78.3333 384.5 0C467.7 247.2 560 262.333 584.5 237.5V874.5C564 787 505.1 608.7 433.5 595.5C367.124 583.263 237.755 723.054 168.639 810.042C163.334 816.998 158.257 823.515 153.5 829.5C158.133 823.408 163.2 816.888 168.639 810.042C232.481 726.34 329.437 579.164 301 533C270.2 483 87.5 512.167 0 533C93.3333 504.667 278.2 434.3 271 379.5C263.8 324.7 130 236.667 64 199.5C138 233.333 299.1 294.4 351.5 268Z" fill="currentColor"></path>
+      </symbol>
+      <symbol id="serviceDeco2" viewBox="0 0 831 1497">
+        <path d="M279.5 0L0 525.5V1149L569.5 1497C464.667 1410.33 259.9 1212.4 279.5 1114C299.1 1015.6 655.333 1139.67 831 1214C658.167 1137.33 305.9 953.1 279.5 829.5C253.1 705.9 534.167 518 678 439.5C561 493.333 302.7 591.9 205.5 555.5C108.3 519.1 214.333 170 279.5 0Z" fill="currentColor"></path>
+      </symbol>
     </svg>
   </div>
 
   <script type="module" src="./assets/js/main.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".heroSwiper", {
+      slidesPerView: 6,
+      spaceBetween: 0,
+      freeMode: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: "",
+        clickable: true,
+      },
+    });
+
+  </script>
 </body>
 
 </html>
