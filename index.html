@@ -20,13 +20,13 @@
           <svg class="right">
             <use xlink:href="#serviceDeco1"></use>
           </svg>
-          <svg class="left" >
+          <svg class="left">
             <use xlink:href="#serviceDeco2"></use>
           </svg>
         </div>
         <div class="heroCarouselBox">
           <!-- Swiper -->
-          <div class="swiper heroSwiper">
+          <div class="swiper homeHeroSwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="item">
@@ -84,8 +84,8 @@
               </div>
 
             </div>
-            <div class="swiper-button swiper-button-next"></div>
-            <div class="swiper-button swiper-button-prev"></div>
+            <div class="swiper-button homeHeroSwiperNext"></div>
+            <div class="swiper-button homeHeroSwiperPrev"></div>
           </div>
         </div>
         <div class="backBox">
@@ -102,6 +102,7 @@
       <section class="homeProjects"></section>
     </main>
     <footer id="footer" class="footer"></footer>
+    <!-- svgSprite -->
     <div id="svgSprite"></div>
   </div>
 
@@ -111,17 +112,24 @@
 
   <!-- Initialize Swiper -->
   <script>
-    var swiper = new Swiper(".heroSwiper", {
-      slidesPerView: "auto",
-      spaceBetween: 0,
+    var homeHeroSwiper = new Swiper(".homeHeroSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 180,
       freeMode: true,
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".homeHeroSwiperNext",
+        prevEl: ".homeHeroSwiperPrev",
       },
       pagination: {
         el: "",
         clickable: true,
+      },
+      breakpoints: {
+        980: {
+          slidesPerView: 6,
+          spaceBetween: 0,
+        },
+ 
       },
     });
 
@@ -135,8 +143,8 @@
       const updateSquare = () => {
         const scrollY = window.scrollY;
         const scale = Math.min(0.2 + scrollY * 0.0008, 2);
-        const rotate = Math.min( scrollY * 0.05, 80);
-   
+        const rotate = Math.min(scrollY * 0.05, 80);
+
 
         rightSquare.style.transform = `scale(${scale}) rotate(${-rotate}deg)`;
         leftSquare.style.transform = `scale(${0.5 + scale}) rotate(${300 + rotate}deg)`;
@@ -144,11 +152,11 @@
       };
 
       window.addEventListener("scroll", () => {
-          if (!ticking) {
-            requestAnimationFrame(updateSquare);
-            ticking = true;
-          }
-        },
+        if (!ticking) {
+          requestAnimationFrame(updateSquare);
+          ticking = true;
+        }
+      },
         { passive: true }
       );
 
