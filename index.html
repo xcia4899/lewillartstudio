@@ -17,10 +17,10 @@
     <section class="homeHero">
       <div class="homeHero-inner">
         <div class="squareAni">
-          <svg class="right"
-            style="translate: none; rotate: none; scale: none; transform: rotate(20deg) scale(0.5, 0.5);">
+          <svg class="right">
             <use xlink:href="#serviceDeco1"></use>
-          </svg><svg class="left" style="translate: none; rotate: none; scale: none; transform: translate(-15%, 0%);">
+          </svg>
+          <svg class="left" >
             <use xlink:href="#serviceDeco2"></use>
           </svg>
         </div>
@@ -88,7 +88,7 @@
             <div class="swiper-button swiper-button-prev"></div>
           </div>
         </div>
-        <div class="backBOx">
+        <div class="backBox">
           <figure class="img">
             <img src="./assets/images/banner-bg_1655x580__25D15b02fz.png" alt="背景圖" width="1655" height="579">
           </figure>
@@ -118,10 +118,14 @@
           fill="currentColor"></path>
       </symbol>
       <symbol id="serviceDeco1" viewBox="0 0 585 875">
-        <path d="M351.5 268C403.9 241.6 395.333 78.3333 384.5 0C467.7 247.2 560 262.333 584.5 237.5V874.5C564 787 505.1 608.7 433.5 595.5C367.124 583.263 237.755 723.054 168.639 810.042C163.334 816.998 158.257 823.515 153.5 829.5C158.133 823.408 163.2 816.888 168.639 810.042C232.481 726.34 329.437 579.164 301 533C270.2 483 87.5 512.167 0 533C93.3333 504.667 278.2 434.3 271 379.5C263.8 324.7 130 236.667 64 199.5C138 233.333 299.1 294.4 351.5 268Z" fill="currentColor"></path>
+        <path
+          d="M351.5 268C403.9 241.6 395.333 78.3333 384.5 0C467.7 247.2 560 262.333 584.5 237.5V874.5C564 787 505.1 608.7 433.5 595.5C367.124 583.263 237.755 723.054 168.639 810.042C163.334 816.998 158.257 823.515 153.5 829.5C158.133 823.408 163.2 816.888 168.639 810.042C232.481 726.34 329.437 579.164 301 533C270.2 483 87.5 512.167 0 533C93.3333 504.667 278.2 434.3 271 379.5C263.8 324.7 130 236.667 64 199.5C138 233.333 299.1 294.4 351.5 268Z"
+          fill="currentColor"></path>
       </symbol>
       <symbol id="serviceDeco2" viewBox="0 0 831 1497">
-        <path d="M279.5 0L0 525.5V1149L569.5 1497C464.667 1410.33 259.9 1212.4 279.5 1114C299.1 1015.6 655.333 1139.67 831 1214C658.167 1137.33 305.9 953.1 279.5 829.5C253.1 705.9 534.167 518 678 439.5C561 493.333 302.7 591.9 205.5 555.5C108.3 519.1 214.333 170 279.5 0Z" fill="currentColor"></path>
+        <path
+          d="M279.5 0L0 525.5V1149L569.5 1497C464.667 1410.33 259.9 1212.4 279.5 1114C299.1 1015.6 655.333 1139.67 831 1214C658.167 1137.33 305.9 953.1 279.5 829.5C253.1 705.9 534.167 518 678 439.5C561 493.333 302.7 591.9 205.5 555.5C108.3 519.1 214.333 170 279.5 0Z"
+          fill="currentColor"></path>
       </symbol>
     </svg>
   </div>
@@ -145,6 +149,40 @@
         clickable: true,
       },
     });
+
+  </script>
+  <script>
+
+
+    function SquareScrollAni() {
+      const rightSquare = document.querySelector(".squareAni .right");
+      const leftSquare = document.querySelector(".squareAni .left");
+      if (!rightSquare || !leftSquare) return;
+      let ticking = false;
+      const updateSquare = () => {
+        const scrollY = window.scrollY;
+        const scale = Math.min(0.2 + scrollY * 0.0008, 2);
+        const rotate = Math.min( scrollY * 0.05, 80);
+   
+
+        rightSquare.style.transform = `scale(${scale}) rotate(${-rotate}deg)`;
+        leftSquare.style.transform = `scale(${0.5 + scale}) rotate(${300 + rotate}deg)`;
+        ticking = false;
+      };
+
+      window.addEventListener("scroll", () => {
+          if (!ticking) {
+            requestAnimationFrame(updateSquare);
+            ticking = true;
+          }
+        },
+        { passive: true }
+      );
+
+      updateSquare();
+    }
+
+    SquareScrollAni();
 
   </script>
 </body>

@@ -23,7 +23,7 @@
   width: 100%;
   height: 100dvw;
   max-height: 1500px;
-  background-color: #dddddc;
+  background-color: #edeceb;
   mask-image: url(../images/decoMask.png);
   mask-size: cover;
   mask-repeat: no-repeat;
@@ -31,13 +31,40 @@
   overflow: hidden;
   z-index: -1;
 }
+.homeHero .squareAni .right,
+.homeHero .squareAni .left {
+  color: #e0e0df;
+  position: absolute;
+  will-change: transform;
+}
+.homeHero .squareAni .left {
+  width: 831px;
+  height: 1495px;
+  aspect-ratio: 1/1.8;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: -35%;
+  left: -50px;
+  transform-origin: left center;
+}
+.homeHero .squareAni .right {
+  width: 585px;
+  aspect-ratio: 1/1.5;
+  position: absolute;
+  top: auto;
+  right: -4.5%;
+  bottom: -40px;
+  left: auto;
+  transform-origin: right center;
+}
 .homeHero .heroCarouselBox {
   position: relative;
 }
 .homeHero .heroCarouselBox .heroSwiper {
   position: relative;
   overflow: visible;
-  translate: 0 180px;
+  translate: 0 120px;
 }
 .homeHero .heroCarouselBox .heroSwiper .swiper-slide {
   position: relative;
@@ -80,11 +107,40 @@
   transform: scale(1.1);
 }
 .homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(1) {
-  width: 15%;
-  transform: translate(20px, 40px);
+  transform: translate(20px, 20px) scale(0.9);
 }
 .homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(1) .img {
   rotate: -27deg;
+}
+.homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(2) {
+  transform: translate(0px, -40px) scale(1.2);
+}
+.homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(2) .img {
+  rotate: -6deg;
+}
+.homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(3) {
+  transform: translate(-20px, -10px) scale(1.1);
+}
+.homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(3) .img {
+  rotate: -3deg;
+}
+.homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(4) {
+  transform: translate(0px, -80px) scale(1.35);
+}
+.homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(4) .img {
+  rotate: 13deg;
+}
+.homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(5) {
+  transform: translate(0px, 60px) scale(1.2);
+}
+.homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(5) .img {
+  rotate: -4deg;
+}
+.homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(6) {
+  transform: translate(0px, -10px);
+}
+.homeHero .heroCarouselBox .heroSwiper:not(.mobile) .swiper-slide:nth-child(6) .img {
+  rotate: 6deg;
 }
 .homeHero .heroCarouselBox .swiper-button {
   background-color: #fff;
@@ -92,8 +148,11 @@
 .homeHero .backBox {
   position: relative;
   pointer-events: none;
-  margin-top: -100px;
-  z-index: 1;
+  margin-top: 0px;
+  z-index: -1;
+}
+.homeHero .backBox .img {
+  margin: 0;
 }
 .homeHero .backBox img {
   display: block;

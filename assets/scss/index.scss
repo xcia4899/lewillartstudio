@@ -28,7 +28,7 @@
     width: 100%;
     height: 100dvw;
     max-height: 1500px;
-    background-color: #dddddc;
+    background-color: #edeceb;
 
     mask-image: url(../images/decoMask.png);
     mask-size: cover;
@@ -37,6 +37,36 @@
 
     overflow: hidden;
     z-index: -1;
+
+    .right,
+    .left {
+      color: #e0e0df;
+      position: absolute;
+      will-change: transform;
+    }
+
+    .left {
+      width: 831px;
+      height: 1495px;
+      aspect-ratio: 1 / 1.8;
+      position: absolute;
+      top: auto;
+      right: auto;
+      bottom: -35%;
+      left: -50px;
+      transform-origin: left center;
+    }
+
+    .right {
+      width: 585px;
+      aspect-ratio: 1 / 1.5;
+      position: absolute;
+      top: auto;
+      right: -4.5%;
+      bottom: -40px;
+      left: auto;
+      transform-origin: right center;
+    }
   }
 
   .heroCarouselBox {
@@ -45,7 +75,7 @@
     .heroSwiper {
       position: relative;
       overflow: visible;
-      translate: 0 180px;
+      translate: 0 120px;
 
       .swiper-slide {
         position: relative;
@@ -103,11 +133,56 @@
       }
 
       .swiper-slide:nth-child(1) {
-        width: 15%;
-        transform: translate(20px, 40px);
+
+        transform: translate(20px, 20px) scale(0.9);
 
         .img {
           rotate: -27deg;
+        }
+      }
+
+      .swiper-slide:nth-child(2) {
+
+        transform: translate(0px, -40px) scale(1.2);
+
+        .img {
+          rotate: -6deg;
+        }
+      }
+
+      .swiper-slide:nth-child(3) {
+
+        transform: translate(-20px, -10px) scale(1.1);
+
+        .img {
+          rotate: -3deg;
+        }
+      }
+
+      .swiper-slide:nth-child(4) {
+
+        transform: translate(0px, -80px) scale(1.35);
+
+        .img {
+          rotate: 13deg;
+        }
+      }
+
+      .swiper-slide:nth-child(5) {
+
+        transform: translate(0px, 60px) scale(1.2);
+
+        .img {
+          rotate: -4deg;
+        }
+      }
+
+      .swiper-slide:nth-child(6) {
+
+        transform: translate(0px, -10px);
+
+        .img {
+          rotate: 6deg;
         }
       }
     }
@@ -121,8 +196,12 @@
   .backBox {
     position: relative;
     pointer-events: none;
-    margin-top: -100px;
-    z-index: 1;
+    margin-top: 0px;
+    z-index: -1;
+
+    .img {
+      margin: 0;
+    }
 
     img {
       display: block;
