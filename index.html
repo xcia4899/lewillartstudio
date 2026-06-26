@@ -113,9 +113,10 @@
   <!-- Initialize Swiper -->
   <script>
     var homeHeroSwiper = new Swiper(".homeHeroSwiper", {
-      slidesPerView: 1,
-      spaceBetween: 180,
-      freeMode: true,
+      slidesPerView: "auto",
+      // spaceBetween: 240,
+      speed: 700,
+      centeredSlides: true, // 第一張會置中
       navigation: {
         nextEl: ".homeHeroSwiperNext",
         prevEl: ".homeHeroSwiperPrev",
@@ -126,7 +127,8 @@
       },
       breakpoints: {
         980: {
-          slidesPerView: 6,
+          slidesPerView: "auto",
+          centeredSlides: false,
           spaceBetween: 0,
         },
  

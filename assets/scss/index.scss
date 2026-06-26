@@ -71,17 +71,21 @@
 
   .heroCarouselBox {
     position: relative;
-    height: 100vh;
+    height: 100%;
 
     .homeHeroSwiper {
       position: relative;
       overflow: visible;
-      translate: 0 120px;
-      height: 100vh;
+      translate: 0 50%;
+
+      // height: 400px;
+      // .swiper-wrapper {}
+
       .swiper-slide {
         position: relative;
-
+        // margin: 0 14vw;
         z-index: 1;
+        width: calc(100% / 4);
 
         .item {
           position: relative;
@@ -91,7 +95,7 @@
           .img {
             position: relative;
             margin: 0;
-        
+
             padding: clamp(0.3rem, 0.4vw, 0.5rem);
             background-color: #fff;
             border: 2px solid #eee;
@@ -118,11 +122,23 @@
           }
         }
       }
+
+      .swiper-slide-active {
+    
+        transform: scale(1.8);
+        transition: all 0.6s ease;
+
+      }
     }
 
     @media (min-width: 980px) {
-      .homeHeroSwiper:not(.mobile) {
+      .homeHeroSwiper {
+        translate: 0 180px;
+
         .swiper-slide {
+          width: calc(100% / 6);
+          margin: 0px;
+
           &:hover {
             z-index: 10;
 
@@ -139,7 +155,7 @@
 
         .swiper-slide:nth-child(1) {
 
-          transform: translate(20px, 20px) scale(0.9);
+          transform: translate(20px, -30px) scale(0.9);
 
           .img {
             rotate: -27deg;
@@ -157,7 +173,7 @@
 
         .swiper-slide:nth-child(3) {
 
-          transform: translate(-20px, -10px) scale(1.1);
+          transform: translate(-20px, -30px) scale(1.1);
 
           .img {
             rotate: -3deg;
@@ -166,7 +182,7 @@
 
         .swiper-slide:nth-child(4) {
 
-          transform: translate(0px, -80px) scale(1.35);
+          transform: translate(0px, -40px) scale(1.35);
 
           .img {
             rotate: 13deg;
@@ -175,7 +191,7 @@
 
         .swiper-slide:nth-child(5) {
 
-          transform: translate(0px, 60px) scale(1.2);
+          transform: translate(0px, 50px) scale(1.2);
 
           .img {
             rotate: -4deg;
@@ -190,6 +206,8 @@
             rotate: 6deg;
           }
         }
+
+
       }
     }
 
