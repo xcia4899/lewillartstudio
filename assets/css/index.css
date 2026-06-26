@@ -108,8 +108,10 @@
   transform: scale(1);
   transition: all 0.4s ease-in 0.8s;
 }
-.homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide-active .item {
-  animation: pop 0.6s ease 0.6s forwards;
+@media (max-width: 979px) {
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide-active .item {
+    animation: pop 0.6s ease 0.6s forwards;
+  }
 }
 @keyframes pop {
   0% {
@@ -126,6 +128,9 @@
   .homeHero .heroCarouselBox .homeHeroSwiper {
     translate: 0 160px;
     width: 100%;
+  }
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-button {
+    display: none;
   }
   .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide {
     width: 16.6666666667%;
@@ -180,9 +185,14 @@
 }
 .homeHero .heroCarouselBox .swiper-button {
   position: absolute;
-  background-color: #ffffff;
+  background-color: #5744ff;
   width: 40px;
   height: 40px;
+  right: 0;
+  bottom: -160px;
+}
+.homeHero .heroCarouselBox .homeHeroSwiperPrev {
+  margin-right: 60px;
 }
 .homeHero .backBox {
   position: relative;
