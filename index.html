@@ -113,25 +113,28 @@
   <!-- Initialize Swiper -->
   <script>
     var homeHeroSwiper = new Swiper(".homeHeroSwiper", {
-      slidesPerView: "auto",
-      // spaceBetween: 240,
+      slidesPerView: 1,
+      spaceBetween: 80,
+      initialSlide: 0,
       speed: 700,
+      loop: true,
       centeredSlides: true, // 第一張會置中
       navigation: {
         nextEl: ".homeHeroSwiperNext",
         prevEl: ".homeHeroSwiperPrev",
       },
-      pagination: {
-        el: "",
-        clickable: true,
+      autoplay: {
+        delay: 5000, // 每 秒切換一次
+        pauseOnMouseEnter: true,
+
       },
       breakpoints: {
         980: {
           slidesPerView: "auto",
-          centeredSlides: false,
           spaceBetween: 0,
+          centeredSlides: false,
         },
- 
+
       },
     });
 
@@ -144,8 +147,8 @@
       let ticking = false;
       const updateSquare = () => {
         const scrollY = window.scrollY;
-        const scale = Math.min(0.2 + scrollY * 0.0008, 2);
-        const rotate = Math.min(scrollY * 0.05, 80);
+        const scale = Math.min(0.2 + scrollY * 0.0008, 1.6);
+        const rotate = Math.min(scrollY * 0.05, 60);
 
 
         rightSquare.style.transform = `scale(${scale}) rotate(${-rotate}deg)`;
