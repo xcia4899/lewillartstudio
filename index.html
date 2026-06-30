@@ -120,9 +120,18 @@
             <div class="swiper homeCarouselSwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <figure class="img">
-                    <img src="./assets/images/service_400x400-1__25D140avCY.png" alt="">
-                  </figure>
+                  <div class="card">
+                    <figure class="img">
+                      <img src="./assets/images/service_400x400-1__25D140avCY.png" alt="">
+                    </figure>
+                    <div class="txt">
+                      <div class="title">藝術規劃</div>
+                      <div class="subtitle">ART PLANNING</div>
+                    </div>
+                    <svg class="icon">
+                      <use xlink:href="#iconLink"></use>
+                    </svg>
+                  </div>
                 </div>
                 <div class="swiper-slide">
                   <figure class="img">
@@ -135,7 +144,7 @@
                   </figure>
                 </div>
               </div>
-              <div class="homeCarouselSwiper-pagination"></div>
+              <div class="homeCarouselSwiper-pagination pagination"></div>
             </div>
           </div>
           <div class="underBtn"><button type="button" class="btn ">CONTACT US</button></div>
@@ -206,6 +215,7 @@
       breakpoints: {
         980: {
           slidesPerView: 3,
+          spaceBetween: 0,
           centeredSlides: false,
         },
       },

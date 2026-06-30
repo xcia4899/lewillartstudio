@@ -379,6 +379,97 @@
 
     .homeCarouselSwiper {
       overflow: visible;
+
+      .swiper-slide {
+        
+        .card {
+          position: relative;
+          background-color: rgb(226, 226, 225);
+          mask-size: cover;
+          mask-repeat: no-repeat;
+          padding: 1.75rem;
+
+          mask-image: url(../images/service-mask-1.png);
+
+          &::before {
+            content: "";
+            display: block;
+            pointer-events: none;
+            width: calc(100% - 3rem);
+            height: calc(100% - 3rem);
+            background-image: url(../images/decoGrid.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: 50%;
+            right: auto;
+            bottom: auto;
+            left: 50%;
+            translate: -50% -50%;
+            background-position: center center;
+            z-index: -1;
+          }
+
+          .img {
+            margin: 0px auto;
+            img {
+              display: block;
+              width: 100%;
+              max-width: 100%;
+              height: auto;
+              backface-visibility: hidden;
+            }
+          }
+
+          .txt {
+            margin-top: -8px;
+
+            .title,
+            .subtitle {
+              font-size: 32px;
+              font-weight: 700;
+              letter-spacing: 0px;
+              line-height: 1.25;
+              color: rgb(102, 102, 102);
+              text-transform: uppercase;
+            }
+          }
+
+          .icon {
+            position: absolute;
+            display: block;
+            top: 32px;
+            left: 28px;
+            width: 40px;
+            height: 40px;
+            color: rgb(102, 102, 102);
+            z-index: 1;
+          }
+
+
+        }
+      }
+
+      .pagination {
+        width: 100%;
+        border: 1px solid;
+        text-align: center;
+
+        .swiper-pagination-bullet {
+          border-radius: 99px;
+          width: 12px;
+          height: 12px;
+          aspect-ratio: 1/1;
+          transition: all 0.4s ease;
+          color: #333;
+          background: var(--swiper-pagination-bullet-inactive-color, #333);
+          opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+          width: 26px;
+        }
+      }
     }
   }
 
