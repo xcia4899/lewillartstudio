@@ -117,7 +117,7 @@
             <button type="button" class="btn">CONTACT US</button>
           </div>
           <div class="dataBox">
-            <div class="swiper homeCarousel">
+            <div class="swiper homeCarouselSwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <figure class="img">
@@ -135,8 +135,10 @@
                   </figure>
                 </div>
               </div>
+              <div class="homeCarouselSwiper-pagination"></div>
             </div>
           </div>
+          <div class="underBtn"><button type="button" class="btn ">CONTACT US</button></div>
         </div>
       </section>
       <section class="homeAbout"></section>
@@ -186,7 +188,7 @@
   </script>
   <!-- homeCarousel Swiper -->
   <script>
-    var homeCarousel = new Swiper(".homeCarousel", {
+    var homeCarouselSwiper = new Swiper(".homeCarouselSwiper", {
       slidesPerView: 2,
       spaceBetween: 80,
       speed: 700,
@@ -197,13 +199,16 @@
         pauseOnMouseEnter: true,
 
       },
-      // breakpoints: {
-      //   980: {
-      //     slidesPerView: 3,
-      //     centeredSlides: false,
-      //   },
-
-      // },
+      pagination: {
+        el: '.homeCarouselSwiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        980: {
+          slidesPerView: 3,
+          centeredSlides: false,
+        },
+      },
     });
 
   </script>

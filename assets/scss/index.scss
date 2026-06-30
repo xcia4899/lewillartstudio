@@ -356,6 +356,7 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 100px;
+
     .titleBox {
       .title {
         font-size: 70px;
@@ -365,8 +366,30 @@
         color: #333333;
       }
     }
+
+    .btn {
+      @media (max-width:980px) {
+        display: none;
+      }
+    }
   }
-  .dataBox{
+
+  .dataBox {
     border: 1px solid;
+
+    .homeCarouselSwiper {
+      overflow: visible;
+    }
+  }
+
+  .underBtn {
+    display: none;
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+
+    @media (max-width:980px) {
+      display: block;
+    }
   }
 }
