@@ -14,4 +14,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     scrollAnimation();
     scrollHeader();
     goTop();
+    Splitting();
 });

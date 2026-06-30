@@ -289,4 +289,32 @@
   }
 }
 
+.homeCarousel {
+  position: relative;
+  padding: 50px 0 160px;
+  margin-top: -1px;
+}
+.homeCarousel .homeCarousel-inner {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-inline: 50px;
+}
+.homeCarousel .introBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 100px;
+}
+.homeCarousel .introBox .titleBox .title {
+  font-size: 70px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.3;
+  color: #333333;
+}
+.homeCarousel .dataBox {
+  border: 1px solid;
+}
+
 /*# sourceMappingURL=index.css.map */

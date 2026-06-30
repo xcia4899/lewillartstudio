@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-
+  <!-- splitting -->
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+  <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
 </head>
 
 <body>
@@ -105,7 +107,38 @@
 
     </section>
     <main id="main" class="main">
-      <section class="homeCarousel"></section>
+      <section class="homeCarousel">
+        <div class="homeCarousel-inner">
+          <div class="introBox">
+            <div class="titleBox">
+              <h1 class="title" data-splitting>將藝術成為生活， <br>在生活中發現無限的可能</h1>
+
+            </div>
+            <button type="button" class="btn">CONTACT US</button>
+          </div>
+          <div class="dataBox">
+            <div class="swiper homeCarousel">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <figure class="img">
+                    <img src="./assets/images/service_400x400-1__25D140avCY.png" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="img">
+                    <img src="./assets/images/service_400x400-1__25D140avCY.png" alt="">
+                  </figure>
+                </div>
+                <div class="swiper-slide">
+                  <figure class="img">
+                    <img src="./assets/images/service_400x400-1__25D140avCY.png" alt="">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="homeAbout"></section>
       <section class="homeProjects"></section>
     </main>
@@ -117,8 +150,12 @@
   <script type="module" src="./assets/js/main.js"></script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <!-- splitting -->
+  <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+  <script>
 
-  <!-- Initialize Swiper -->
+  </script>
+  <!-- homeHeroSwiper Swiper -->
   <script>
     var homeHeroSwiper = new Swiper(".homeHeroSwiper", {
       slidesPerView: 1,
@@ -144,6 +181,29 @@
         },
 
       },
+    });
+
+  </script>
+  <!-- homeCarousel Swiper -->
+  <script>
+    var homeCarousel = new Swiper(".homeCarousel", {
+      slidesPerView: 2,
+      spaceBetween: 80,
+      speed: 700,
+      loop: true,
+
+      autoplay: {
+        delay: 5000, // 每 秒切換一次
+        pauseOnMouseEnter: true,
+
+      },
+      // breakpoints: {
+      //   980: {
+      //     slidesPerView: 3,
+      //     centeredSlides: false,
+      //   },
+
+      // },
     });
 
   </script>
