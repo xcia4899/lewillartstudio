@@ -659,13 +659,20 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
     translate: 0 160px;
     width: 100%;
   }
-  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-button {
-    display: none;
-  }
   .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide {
     width: 16.6666666667%;
     margin: 0px;
     z-index: 1;
+    opacity: 0;
+    transform: translate(200px, 400px) scale(0.5);
+    animation: slideIn 0.5s ease-in forwards;
+    --end-x: 0px;
+    --end-y: 0px;
+    --end-scale: 0.4;
+    --rotate: 0deg;
+  }
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide .img {
+    rotate: var(--rotate);
   }
   .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:hover {
     z-index: 10;
@@ -676,53 +683,102 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:hover .img {
     transform: scale(1.1);
   }
-  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(1) {
-    transform: translate(20px, -30px) scale(0.9);
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide-active {
+    transition: none;
   }
-  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(1) .img {
-    rotate: -27deg;
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(1) {
+    animation-delay: 0.15s;
   }
   .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(2) {
-    transform: translate(0px, -40px) scale(1.2);
-  }
-  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(2) .img {
-    rotate: -6deg;
+    animation-delay: 0.3s;
   }
   .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(3) {
-    transform: translate(-20px, -30px) scale(1.1);
-  }
-  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(3) .img {
-    rotate: -3deg;
+    animation-delay: 0.45s;
   }
   .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(4) {
-    transform: translate(0px, -40px) scale(1.35);
-  }
-  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(4) .img {
-    rotate: 13deg;
+    animation-delay: 0.6s;
   }
   .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(5) {
-    transform: translate(0px, 50px) scale(1.2);
-  }
-  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(5) .img {
-    rotate: -4deg;
+    animation-delay: 0.75s;
   }
   .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(6) {
-    transform: translate(0px, -10px);
+    animation-delay: 0.9s;
   }
-  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(6) .img {
-    rotate: 6deg;
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(1) {
+    --end-x: 20px;
+    --end-y: -10px;
+    --end-scale: 0.9;
+    --rotate: -27deg;
+  }
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(2) {
+    --end-x: 0px;
+    --end-y: -40px;
+    --end-scale: 1.2;
+    --rotate: -6deg;
+  }
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(3) {
+    --end-x: -20px;
+    --end-y: 0px;
+    --end-scale: 1.2;
+    --rotate: -3deg;
+  }
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(4) {
+    --end-x: 0px;
+    --end-y: -80px;
+    --end-scale: 1.45;
+    --rotate: 13deg;
+  }
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(5) {
+    --end-x: 0px;
+    --end-y: 50px;
+    --end-scale: 1.2;
+    --rotate: -4deg;
+  }
+  .homeHero .heroCarouselBox .homeHeroSwiper .swiper-slide:nth-child(6) {
+    --end-x: 0px;
+    --end-y: -10px;
+    --end-scale: 1;
+    --rotate: 6deg;
+  }
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translate(200px, 400px) scale(0.4);
+    }
+    70% {
+      opacity: 1;
+      transform: translate(var(--end-x), calc(var(--end-y) - 30px)) scale(var(--end-scale));
+    }
+    100% {
+      opacity: 1;
+      transform: translate(var(--end-x), var(--end-y)) scale(var(--end-scale));
+    }
+  }
+  .homeHero .heroCarouselBox .swiper-button {
+    display: none;
   }
 }
 .homeHero .heroCarouselBox .swiper-button {
   position: absolute;
-  background-color: #5744ff;
+  right: 0;
+  bottom: -40px;
+}
+@media (max-width: 600px) {
+  .homeHero .heroCarouselBox .swiper-button {
+    right: calc(50% - 45px);
+    bottom: -140px;
+  }
+}
+.homeHero .heroCarouselBox .swiper-button svg {
+  color: #c9c9c9;
   width: 40px;
   height: 40px;
-  right: 0;
-  bottom: -160px;
+  padding: 5px;
+  border-radius: 50%;
+  border: 2px solid #c9c9c9;
 }
 .homeHero .heroCarouselBox .homeHeroSwiperPrev {
-  margin-right: 60px;
+  margin-right: 50px;
 }
 .homeHero .backBox {
   position: relative;
@@ -745,6 +801,11 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
     transform: scale(0);
     opacity: 0;
     animation: bb 0.6s ease 1s forwards;
+  }
+}
+@media (max-width: 600px) {
+  .homeHero .backBox {
+    margin-top: 120px;
   }
 }
 @keyframes bb {
