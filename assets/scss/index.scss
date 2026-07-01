@@ -375,13 +375,26 @@
   }
 
   .dataBox {
-    border: 1px solid;
+    // border: 1px solid;
 
     .homeCarouselSwiper {
       overflow: visible;
 
+      @media (max-width:980px) {
+        transform: translateX(100px);
+      }
+
       .swiper-slide {
-        
+
+        --rotate: 0deg;
+        --scale: 1;
+        --translateX: 0px;
+        --translateY: 0px;
+
+        rotate: var(--rotate);
+        scale: var(--scale);
+        translate: var(--translateX) var(--translateY);
+
         .card {
           position: relative;
           background-color: rgb(226, 226, 225);
@@ -390,6 +403,8 @@
           padding: 1.75rem;
 
           mask-image: url(../images/service-mask-1.png);
+
+          transition: all 0.5s ease-in-out;
 
           &::before {
             content: "";
@@ -412,21 +427,27 @@
 
           .img {
             margin: 0px auto;
+            width: clamp(120px, 80%, 300px);
+            height: 60%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+
             img {
               display: block;
               width: 100%;
               max-width: 100%;
-              height: auto;
+
+              object-fit: cover;
               backface-visibility: hidden;
             }
           }
 
           .txt {
-            margin-top: -8px;
+            margin-top: -16px;
 
             .title,
             .subtitle {
-              font-size: 32px;
+              font-size: clamp(22px, 4rem, 32px);
               font-weight: 700;
               letter-spacing: 0px;
               line-height: 1.25;
@@ -446,32 +467,97 @@
             z-index: 1;
           }
 
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #e9ca49;
+            z-index: -2;
+            width: 0%;
+            height: 100%;
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+            transform: scaleX(0);
+          }
 
+          &:hover:after {
+            opacity: 1;
+            transform: scaleX(1);
+          }
+
+          @media (max-width: 1180px) {
+            padding: 1rem 1.25rem 1rem;
+          }
+        }
+      }
+      .swiper-slide.left {
+        --rotate: -5deg;
+        @media (min-width:980px) {
+          --rotate: -7deg;
+        }
+        .card {
+          mask-image: url(../images/service-mask-1.png);
         }
       }
 
-      .pagination {
-        width: 100%;
-        border: 1px solid;
-        text-align: center;
+      .swiper-slide.center {
+        --scale: 1;
 
-        .swiper-pagination-bullet {
-          border-radius: 99px;
-          width: 12px;
-          height: 12px;
-          aspect-ratio: 1/1;
-          transition: all 0.4s ease;
-          color: #333;
-          background: var(--swiper-pagination-bullet-inactive-color, #333);
-          opacity: 1;
+        --rotate: -5deg;
+
+        @media (min-width:980px) {
+          --translateY: 50px;
+          --translateX: 0px;
+          --scale: 1.2;
+          --rotate: 3deg;
         }
 
-        .swiper-pagination-bullet-active {
-          width: 26px;
+        .card {
+          mask-image: url(../images/service-mask-2.png);
+        }
+      }
+
+      .swiper-slide.right {
+        --rotate: -5deg;
+
+        @media (min-width:980px) {
+          --rotate: -3deg;
+          --translateY: 40px;
+          --translateX: -50px;
+
+        }
+
+        .card {
+          mask-image: url(../images/service-mask-3.png);
         }
       }
     }
+
+    .pagination {
+      width: 100%;
+      border: 1px solid;
+      text-align: center;
+      margin-top: 100px;
+
+      .swiper-pagination-bullet {
+        border-radius: 99px;
+        width: 12px;
+        height: 12px;
+        aspect-ratio: 1/1;
+        transition: all 0.4s ease;
+        color: #333;
+        background: var(--swiper-pagination-bullet-inactive-color, #333);
+        opacity: 1;
+      }
+
+      .swiper-pagination-bullet-active {
+        width: 26px;
+      }
+    }
   }
+
 
   .underBtn {
     display: none;

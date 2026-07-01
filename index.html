@@ -119,7 +119,7 @@
           <div class="dataBox">
             <div class="swiper homeCarouselSwiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-slide left">
                   <div class="card">
                     <figure class="img">
                       <img src="./assets/images/service_400x400-1__25D140avCY.png" alt="">
@@ -133,19 +133,39 @@
                     </svg>
                   </div>
                 </div>
-                <div class="swiper-slide">
-                  <figure class="img">
-                    <img src="./assets/images/service_400x400-1__25D140avCY.png" alt="">
-                  </figure>
+                <div class="swiper-slide center">
+                  <div class="card">
+                    <figure class="img">
+                      <img src="./assets/images/service_400x400-3__25D14V3jnQ.png" alt="">
+                    </figure>
+                    <div class="txt">
+                      <div class="title">公共藝術</div>
+                      <div class="subtitle">PUBLIC ART</div>
+                    </div>
+                    <svg class="icon">
+                      <use xlink:href="#iconLink"></use>
+                    </svg>
+                  </div>
                 </div>
-                <div class="swiper-slide">
-                  <figure class="img">
-                    <img src="./assets/images/service_400x400-1__25D140avCY.png" alt="">
-                  </figure>
+                <div class="swiper-slide right">
+                  <div class="card">
+                    <figure class="img">
+                      <img src="./assets/images/service_400x400-2__25D14z8iFy.png" alt="">
+                    </figure>
+                    <div class="txt">
+                      <div class="title">私人訂制</div>
+                      <div class="subtitle">CUSTOMIZE WORKS</div>
+                    </div>
+                    <svg class="icon">
+                      <use xlink:href="#iconLink"></use>
+                    </svg>
+                  </div>
                 </div>
+              
               </div>
-              <div class="homeCarouselSwiper-pagination pagination"></div>
+             
             </div>
+            <div class="homeCarouselSwiper-pagination pagination"></div>
           </div>
           <div class="underBtn"><button type="button" class="btn ">CONTACT US</button></div>
         </div>
@@ -199,12 +219,12 @@
   <script>
     var homeCarouselSwiper = new Swiper(".homeCarouselSwiper", {
       slidesPerView: 2,
-      spaceBetween: 80,
+      spaceBetween: 40,
       speed: 700,
       loop: true,
 
       autoplay: {
-        delay: 5000, // 每 秒切換一次
+        delay: 3000, // 每 秒切換一次
         pauseOnMouseEnter: true,
 
       },
@@ -215,7 +235,7 @@
       breakpoints: {
         980: {
           slidesPerView: 3,
-          spaceBetween: 0,
+          spaceBetween: 80,
           centeredSlides: false,
         },
       },
