@@ -307,7 +307,7 @@
   margin-bottom: 100px;
 }
 .homeCarousel .introBox .titleBox .title {
-  font-size: 70px;
+  font-size: clamp(30px, 5vw, 70px);
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1.3;
@@ -320,11 +320,6 @@
 }
 .homeCarousel .dataBox .homeCarouselSwiper {
   overflow: visible;
-}
-@media (max-width: 980px) {
-  .homeCarousel .dataBox .homeCarouselSwiper {
-    transform: translateX(100px);
-  }
 }
 .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide {
   --rotate: 0deg;
@@ -462,9 +457,8 @@
 }
 .homeCarousel .dataBox .pagination {
   width: 100%;
-  border: 1px solid;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 .homeCarousel .dataBox .pagination .swiper-pagination-bullet {
   border-radius: 99px;
