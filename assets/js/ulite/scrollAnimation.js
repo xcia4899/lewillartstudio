@@ -16,8 +16,8 @@ export　function scrollAnimation(options = {}) {
                 });
             },
             {
-                rootMargin: options.rootMargin || "-30% 0px -25% 0px",
-                threshold: options.threshold || 0.4,
+                rootMargin: options.rootMargin || "0px 0px -10% 0px",
+                threshold: options.threshold || 0.15,
             }
         );
 

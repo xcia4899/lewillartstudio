@@ -767,17 +767,6 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
     animation: pop 0.6s ease 0.6s forwards;
   }
 }
-@keyframes pop {
-  0% {
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(0.8);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @media (min-width: 980px) {
   .homeHero .heroCarouselBox .homeHeroSwiper {
     translate: 0 160px;
@@ -864,20 +853,6 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
     --end-scale: 1;
     --rotate: 6deg;
   }
-  @keyframes slideIn {
-    0% {
-      opacity: 0;
-      transform: translate(200px, 400px) scale(0.4);
-    }
-    70% {
-      opacity: 1;
-      transform: translate(var(--end-x), calc(var(--end-y) - 30px)) scale(var(--end-scale));
-    }
-    100% {
-      opacity: 1;
-      transform: translate(var(--end-x), var(--end-y)) scale(var(--end-scale));
-    }
-  }
   .homeHero .heroCarouselBox .swiper-button {
     display: none;
   }
@@ -932,6 +907,31 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
     margin-top: 120px;
   }
 }
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate(200px, 400px) scale(0.4);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(var(--end-x), calc(var(--end-y) - 30px)) scale(var(--end-scale));
+  }
+  100% {
+    opacity: 1;
+    transform: translate(var(--end-x), var(--end-y)) scale(var(--end-scale));
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes bb {
   0% {
     transform: scale(0);
@@ -969,16 +969,6 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
 }
 .homeCarousel .introBox .titleBox .title .word .char {
   opacity: 0;
-  animation: wordShow 0.3s ease-in-out forwards;
-  animation-delay: calc(var(--char-index) * 0.14s);
-}
-@keyframes wordShow {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 .homeCarousel .introBox .btn {
   flex: 1 1 auto;
@@ -986,7 +976,6 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   margin-bottom: 1rem;
   line-height: 1.3;
   opacity: 0;
-  animation: UpAniShow ease 0.8s forwards 2s;
   vertical-align: baseline;
 }
 @media (max-width: 980px) {
@@ -1006,7 +995,6 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   .homeCarousel .dataBox .homeCarouselSwiper {
     opacity: 0;
     transform: translateY(80px);
-    animation: UpAniShow ease 0.8s forwards 1.4s;
   }
 }
 .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide {
@@ -1141,40 +1129,20 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
 @media (min-width: 980px) {
   .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide {
     opacity: 0;
-    animation: homeCarouselSlideUp 0.8s ease-in forwards;
   }
   .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.left {
     --rotate: -7deg;
-    animation-delay: 0.6s;
   }
   .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.center {
     --translateY: 20px;
     --translateX: 0px;
     --scale: 1.2;
     --rotate: 3deg;
-    animation-delay: 0.8s;
   }
   .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.right {
     --rotate: -3deg;
     --translateY: 10px;
     --translateX: -50px;
-    animation-delay: 1s;
-  }
-  @keyframes homeCarouselSlideUp {
-    0% {
-      opacity: 0;
-      rotate: 0deg;
-      translate: var(--translateX) calc(var(--translateY) + 160px);
-    }
-    60% {
-      opacity: 1;
-      translate: var(--translateX) var(--translateY);
-    }
-    100% {
-      opacity: 1;
-      rotate: var(--rotate);
-      translate: var(--translateX) var(--translateY);
-    }
   }
 }
 .homeCarousel .dataBox .pagination {
@@ -1209,11 +1177,63 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   text-align: center;
   opacity: 0;
   transform: translateY(40px);
-  animation: UpAniShow ease 0.8s forwards 2s;
 }
 @media (max-width: 980px) {
   .homeCarousel .underBtn {
     display: block;
+  }
+}
+.homeCarousel.is-animated .introBox .titleBox .word .char {
+  animation: wordShow 0.3s ease-in-out forwards;
+  animation-delay: calc(var(--char-index) * 0.14s);
+}
+.homeCarousel.is-animated .introBox .btn {
+  animation: UpAniShow ease 0.8s forwards 2s;
+}
+@media (max-width: 980px) {
+  .homeCarousel.is-animated .dataBox .homeCarouselSwiper {
+    animation: UpAniShow ease 0.8s forwards 1.4s;
+  }
+}
+@media (min-width: 980px) {
+  .homeCarousel.is-animated .dataBox .homeCarouselSwiper .swiper-slide {
+    animation: homeCarouselSlideUp 0.8s ease-in forwards;
+  }
+  .homeCarousel.is-animated .dataBox .homeCarouselSwiper .swiper-slide.left {
+    animation-delay: 2s;
+  }
+  .homeCarousel.is-animated .dataBox .homeCarouselSwiper .swiper-slide.center {
+    animation-delay: 2.4s;
+  }
+  .homeCarousel.is-animated .dataBox .homeCarouselSwiper .swiper-slide.right {
+    animation-delay: 2.8s;
+  }
+}
+.homeCarousel.is-animated .underBtn {
+  animation: UpAniShow ease 0.8s forwards 2s;
+}
+@keyframes homeCarouselSlideUp {
+  0% {
+    opacity: 0;
+    rotate: 0deg;
+    translate: var(--translateX) calc(var(--translateY) + 160px);
+  }
+  60% {
+    opacity: 1;
+    translate: var(--translateX) var(--translateY);
+  }
+  100% {
+    opacity: 1;
+    rotate: var(--rotate);
+    translate: var(--translateX) var(--translateY);
+  }
+}
+@keyframes wordShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
