@@ -672,6 +672,7 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   color: #e0e0df;
   position: absolute;
   will-change: transform;
+  transition: all 0.2s ease;
 }
 .homeHero .squareAni .left {
   width: 831px;
@@ -689,7 +690,7 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   aspect-ratio: 1/1.5;
   position: absolute;
   top: auto;
-  right: -10%;
+  right: -4%;
   bottom: -40px;
   left: auto;
   transform-origin: right center;
@@ -698,6 +699,24 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   .homeHero .squareAni {
     top: 20px;
     height: 160dvw;
+  }
+  .homeHero .squareAni .left {
+    left: -30%;
+    bottom: -20%;
+  }
+  .homeHero .squareAni .right {
+    right: -10%;
+    bottom: 140px;
+  }
+}
+@media (max-width: 680px) {
+  .homeHero .squareAni .left {
+    left: -50%;
+    bottom: -60%;
+  }
+  .homeHero .squareAni .right {
+    right: -5%;
+    bottom: -160px;
   }
 }
 .homeHero .heroCarouselBox {
@@ -948,13 +967,47 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   line-height: 1.3;
   color: #333333;
 }
+.homeCarousel .introBox .titleBox .title .word .char {
+  opacity: 0;
+  animation: wordShow 0.3s ease-in-out forwards;
+  animation-delay: calc(var(--char-index) * 0.14s);
+}
+@keyframes wordShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.homeCarousel .introBox .btn {
+  flex: 1 1 auto;
+  max-width: 330px;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  opacity: 0;
+  animation: UpAniShow ease 0.8s forwards 2s;
+  vertical-align: baseline;
+}
 @media (max-width: 980px) {
   .homeCarousel .introBox .btn {
     display: none;
   }
 }
+@media (max-width: 1180px) {
+  .homeCarousel .introBox .btn {
+    max-width: 280px;
+  }
+}
 .homeCarousel .dataBox .homeCarouselSwiper {
   overflow: visible;
+}
+@media (max-width: 980px) {
+  .homeCarousel .dataBox .homeCarouselSwiper {
+    opacity: 0;
+    transform: translateY(80px);
+    animation: UpAniShow ease 0.8s forwards 1.4s;
+  }
 }
 .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide {
   --rotate: 0deg;
@@ -964,6 +1017,7 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   rotate: var(--rotate);
   scale: var(--scale);
   translate: var(--translateX) var(--translateY);
+  cursor: pointer;
 }
 .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide .card {
   position: relative;
@@ -1051,13 +1105,22 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
     padding: 1rem 1.25rem 1rem;
   }
 }
+.homeCarousel .dataBox .homeCarouselSwiper .swiper-slide::before {
+  position: absolute;
+  content: "";
+  top: auto;
+  right: -8px;
+  bottom: -8px;
+  left: auto;
+  display: block;
+  pointer-events: none;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background: transparent;
+  border: 2px solid #919191;
+}
 .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.left {
   --rotate: -5deg;
-}
-@media (min-width: 980px) {
-  .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.left {
-    --rotate: -7deg;
-  }
 }
 .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.left .card {
   mask-image: url(../images/service-mask-1.png);
@@ -1066,34 +1129,65 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   --scale: 1;
   --rotate: -5deg;
 }
-@media (min-width: 980px) {
-  .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.center {
-    --translateY: 50px;
-    --translateX: 0px;
-    --scale: 1.2;
-    --rotate: 3deg;
-  }
-}
 .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.center .card {
   mask-image: url(../images/service-mask-2.png);
 }
 .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.right {
   --rotate: -5deg;
 }
-@media (min-width: 980px) {
-  .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.right {
-    --rotate: -3deg;
-    --translateY: 40px;
-    --translateX: -50px;
-  }
-}
 .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.right .card {
   mask-image: url(../images/service-mask-3.png);
+}
+@media (min-width: 980px) {
+  .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide {
+    opacity: 0;
+    animation: homeCarouselSlideUp 0.8s ease-in forwards;
+  }
+  .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.left {
+    --rotate: -7deg;
+    animation-delay: 0.6s;
+  }
+  .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.center {
+    --translateY: 20px;
+    --translateX: 0px;
+    --scale: 1.2;
+    --rotate: 3deg;
+    animation-delay: 0.8s;
+  }
+  .homeCarousel .dataBox .homeCarouselSwiper .swiper-slide.right {
+    --rotate: -3deg;
+    --translateY: 10px;
+    --translateX: -50px;
+    animation-delay: 1s;
+  }
+  @keyframes homeCarouselSlideUp {
+    0% {
+      opacity: 0;
+      rotate: 0deg;
+      translate: var(--translateX) calc(var(--translateY) + 160px);
+    }
+    60% {
+      opacity: 1;
+      translate: var(--translateX) var(--translateY);
+    }
+    100% {
+      opacity: 1;
+      rotate: var(--rotate);
+      translate: var(--translateX) var(--translateY);
+    }
+  }
 }
 .homeCarousel .dataBox .pagination {
   width: 100%;
   text-align: center;
   margin-top: 40px;
+}
+@media (max-width: 980px) {
+  .homeCarousel .dataBox .pagination {
+    opacity: 0;
+    transform: translateY(80px);
+    animation: UpAniShow ease 0.8s forwards 1.6s;
+  }
 }
 .homeCarousel .dataBox .pagination .swiper-pagination-bullet {
   border-radius: 99px;
@@ -1113,10 +1207,24 @@ header.is-scrolled .rightBox .languageBox .languageCurrent {
   margin-top: 40px;
   width: 100%;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: UpAniShow ease 0.8s forwards 2s;
 }
 @media (max-width: 980px) {
   .homeCarousel .underBtn {
     display: block;
+  }
+}
+
+@keyframes UpAniShow {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 

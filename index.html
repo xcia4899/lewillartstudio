@@ -161,9 +161,8 @@
                     </svg>
                   </div>
                 </div>
-              
+
               </div>
-             
             </div>
             <div class="homeCarouselSwiper-pagination pagination"></div>
           </div>
@@ -235,6 +234,7 @@
       },
       breakpoints: {
         980: {
+          initialSlide: 0,
           slidesPerView: 3,
           spaceBetween: 80,
           centeredSlides: false,
@@ -242,6 +242,13 @@
       },
     });
 
+
+    window.addEventListener("resize", () => {
+      const nowDesktop = window.innerWidth >= 980;
+      if (nowDesktop) {
+        homeCarouselSwiper.slideToLoop(0, 0);
+      }
+    });
   </script>
   <script>
     function SquareScrollAni() {
@@ -251,7 +258,7 @@
       let ticking = false;
       const updateSquare = () => {
         const scrollY = window.scrollY;
-        const scale = Math.min(0.2 + scrollY * 0.0008, 1.6);
+        const scale = Math.min(0.1 + scrollY * 0.0005, 1);
         const rotate = Math.min(scrollY * 0.05, 60);
 
 
@@ -275,6 +282,23 @@
     SquareScrollAni();
 
   </script>
+  <!--動畫重置-->
+  <script>
+    const media = window.matchMedia("(min-width:980px)");
+
+    media.addEventListener("change", () => {
+      restartAnimation();
+    });
+    //動畫重置
+    function restartAnimation() {
+      document.querySelectorAll(".word .char").forEach(char => {
+        char.style.animation = "none";
+        void char.offsetWidth;
+        char.style.animation = "";
+      });
+    }
+  </script>
+
 </body>
 
 </html>
